@@ -21,6 +21,8 @@ namespace PasswordManager.Tests
         [TestCase("five5", "Should be at least 6 chars. Try again.", TestName = "LessThan5")]
         [TestCase("alllowercase", "Should contain upper and lower case. Try again.", TestName = "LowerCaseOnly")]
         [TestCase("ALLUPPERCASE", "Should contain upper and lower case. Try again.", TestName = "UpperCaseOnly")]
+        [TestCase("Password", "Should not be a common password. Try again.", TestName = "CommonPassword_password")]
+        [TestCase("Qwerty", "Should not be a common password. Try again.", TestName = "CommonPassword_qwerty")]
         public void InValidPasswordCriteria(string password, string expectedErrorMessage)
         {
             string validationErrorMessage;
