@@ -12,7 +12,7 @@ namespace PasswordManager.Tests
         public void ValidPasswordCriteria(string password)
         {
             string validationErrorMessage;
-            Assert.True(Program.IsValidPasswordCriteria(password, out validationErrorMessage));
+            Assert.True(PasswordCriteriaValidation.IsValidPassword(password, out validationErrorMessage));
         }
 
         [TestCase("", "Password cannot be empty. Try again.", TestName = "Empty")]
@@ -20,7 +20,7 @@ namespace PasswordManager.Tests
         public void InValidPasswordCriteria(string password, string expectedErrorMessage)
         {
             string validationErrorMessage;
-            Assert.False(Program.IsValidPasswordCriteria(password, out validationErrorMessage));
+            Assert.False(PasswordCriteriaValidation.IsValidPassword(password, out validationErrorMessage));
             Assert.AreEqual(expectedErrorMessage, validationErrorMessage);
         }
     }
