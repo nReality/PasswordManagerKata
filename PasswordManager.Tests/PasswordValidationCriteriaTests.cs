@@ -9,6 +9,8 @@ namespace PasswordManager.Tests
         [TestCase("longenough", TestName = "LongerThan6")]
         [TestCase("sixchr", TestName = "Exactly6")]
         [TestCase("veryloooooooooooooooooooooooooooooong", TestName = "VeryLong")]
+        [TestCase("UPPERandlowercase", TestName = "UpperAndLowerCase")]
+
         public void ValidPasswordCriteria(string password)
         {
             string validationErrorMessage;
@@ -17,6 +19,8 @@ namespace PasswordManager.Tests
 
         [TestCase("", "Password cannot be empty. Try again.", TestName = "Empty")]
         [TestCase("five5", "Should be at least 6 chars. Try again.", TestName = "LessThan5")]
+        [TestCase("alllowercase", "Should contain upper and lower case. Try again.", TestName = "LowerCaseOnly")]
+        [TestCase("ALLUPPERCASE", "Should contain upper and lower case. Try again.", TestName = "UpperCaseOnly")]
         public void InValidPasswordCriteria(string password, string expectedErrorMessage)
         {
             string validationErrorMessage;
