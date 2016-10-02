@@ -6,13 +6,13 @@ using System.Text;
 
 namespace PasswordManager
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             AddOrChangePassword();
             CheckPassword();
-            Console.ReadKey();
+            Console.ReadLine();
         }
 
         public static void AddOrChangePassword()
