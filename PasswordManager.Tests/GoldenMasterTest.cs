@@ -12,28 +12,28 @@ namespace PasswordManager.Tests
         {
 var userInputString =
 @"myuser
-mypassword
+Mypassword
 myuser
-mypassword
+Mypassword
 
 userforincorrecttest
-correctpassword
+Correctpassword
 userforincorrecttest
-incorrectpassword
+Incorrectpassword
 
 userforshortpasswordtest
-short
+Short
 userforshortpasswordtest
-correctlength
+Correctlength
 userforshortpasswordtest
-correctlength
+Correctlength
 
 userforpasswordcannotbeempty
 
 userforpasswordcannotbeempty
-notempty
+NotEmpty
 userforpasswordcannotbeempty
-notempty
+NotEmpty
 ";
             
             Console.SetIn(new StringReader(userInputString));

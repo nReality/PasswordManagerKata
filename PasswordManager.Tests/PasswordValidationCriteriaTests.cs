@@ -6,9 +6,9 @@ namespace PasswordManager.Tests
     [TestFixture]
     public class PasswordValidationCriteriaTests
     {
-        [TestCase("longenough", TestName = "LongerThan6")]
-        [TestCase("sixchr", TestName = "Exactly6")]
-        [TestCase("veryloooooooooooooooooooooooooooooong", TestName = "VeryLong")]
+        [TestCase("Longenough", TestName = "LongerThan6")]
+        [TestCase("Sixchr", TestName = "Exactly6")]
+        [TestCase("Veryloooooooooooooooooooooooooooooong", TestName = "VeryLong")]
         [TestCase("UPPERandlowercase", TestName = "UpperAndLowerCase")]
 
         public void ValidPasswordCriteria(string password)
