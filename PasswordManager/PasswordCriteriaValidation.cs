@@ -1,25 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace PasswordManager
 {
     public class PasswordCriteriaValidation
     {
+        delegate bool IsValid(string password);
+
+        /// <summary>
+        /// Make validation driven by this collection of rules
+        /// </summary>
+        static Dictionary<IsValid, string> invalidRulesAndMessages = new Dictionary<IsValid, string>
+        {
+            {(pwd)=>string.IsNullOrWhiteSpace(pwd),"Password cannot be empty. Try again." },
+            {(pwd)=>pwd.Length < 6,"Should be at least 6 chars. Try again." },
+        };
+
         public static bool IsValidPassword(string password, out string validationErrorMessage)
         {
-            if (string.IsNullOrWhiteSpace(password))
+            foreach (var invalidRule in invalidRulesAndMessages.Keys)
             {
-                validationErrorMessage = "Password cannot be empty. Try again.";
-                return false;
+                if (invalidRule(password))
+                {
+                    validationErrorMessage = invalidRulesAndMessages[invalidRule];
+                    return false;
+                }
             }
-            else if (password.Length < 6)
-            {
-                validationErrorMessage = "Should be at least 6 chars. Try again.";
-                return false;
-            }
+
             validationErrorMessage = "";
             return true;
         }
