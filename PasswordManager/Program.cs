@@ -15,6 +15,26 @@ namespace PasswordManager
             Console.ReadLine();
         }
 
+        private static bool IsValidPasswordCriteria(string password, out string validationErrorMessage)
+        {
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                validationErrorMessage = "Password cannot be empty. Try again.";
+                //try again
+                AddOrChangePassword();
+                return false;
+            }
+            else if (password.Length < 6)
+            {
+                validationErrorMessage = "Should be at least 6 chars. Try again.";
+                //try again
+                AddOrChangePassword();
+                return false;
+            }
+            validationErrorMessage = "";
+            return true;
+        }
+
         public static void AddOrChangePassword()
         {
             //input user name
@@ -32,18 +52,10 @@ namespace PasswordManager
             Console.WriteLine("Enter your new password:");
             string password = Console.ReadLine();
 
-            //Validate password criteria
-
-            if (string.IsNullOrWhiteSpace(password))
+            string validationErrorMessage;
+            if (IsValidPasswordCriteria(password, out validationErrorMessage))
             {
-                Console.WriteLine("Password cannot be empty. Try again.");
-                //try again
-                AddOrChangePassword();
-                return;
-            }
-            else if (password.Length < 6)
-            {
-                Console.WriteLine("Should be at least 6 chars. Try again.");
+                Console.WriteLine(validationErrorMessage);
                 //try again
                 AddOrChangePassword();
                 return;
