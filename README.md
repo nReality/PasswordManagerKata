@@ -12,7 +12,7 @@ This is an exersize in making a change to a production-like "Big ball of mud" by
   e. Add the change (easy change)
   
   You product owner hands you the following prioritised backlog:
-  1. We need stricter password criteria: mix of upper, lowercase and numbers; and common ones not allowed ("123456","password","qwerty")
+  1. We need stricter password criteria: mix of upper and lowercaseand common ones not allowed ("password","qwerty")
   2. We need stronger hashing algo for new users
   3. Allow multi language support
   4. Forgot password: Can we add ability to get a hint
