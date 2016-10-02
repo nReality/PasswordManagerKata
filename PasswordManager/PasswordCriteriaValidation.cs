@@ -14,6 +14,7 @@ namespace PasswordManager
             {(pwd)=>string.IsNullOrWhiteSpace(pwd),"Password cannot be empty. Try again." },
             {(pwd)=>pwd.Length < 6,"Should be at least 6 chars. Try again." },
             {(pwd)=>(pwd.ToLower() == pwd) || (pwd.ToUpper() == pwd),"Should contain upper and lower case. Try again." },
+            {(pwd)=>(pwd.ToLower() == "qwerty") || (pwd.ToLower() == "password"),"Should not be a common password. Try again." },
         };
 
         public static bool IsValidPassword(string password, out string validationErrorMessage)
