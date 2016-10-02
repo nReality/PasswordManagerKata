@@ -15,7 +15,7 @@ namespace PasswordManager
             Console.ReadLine();
         }
 
-        private static bool IsValidPasswordCriteria(string password, out string validationErrorMessage)
+        public static bool IsValidPasswordCriteria(string password, out string validationErrorMessage)
         {
             if (string.IsNullOrWhiteSpace(password))
             {
