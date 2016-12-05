@@ -11,7 +11,7 @@ This is an exersize in making a change to a production-like "Big ball of mud" by
   d. Add a failing test for the new behaviour (make it easy)
   e. Add the change (easy change)
   
-  You product owner hands you the following prioritised backlog:
+Your product owner hands you the following prioritised backlog:
   1. We need stricter password criteria: mix of upper and lowercaseand common ones not allowed ("password","qwerty")
   2. We need stronger hashing algo for new users
   3. Allow multi language support
