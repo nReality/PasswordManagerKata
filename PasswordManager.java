@@ -22,7 +22,9 @@ public class PasswordManager
   public static void AddOrChangePassword()
   {
     //input user name
-    System.out.println("Enter your user name");
+
+    System.out.println("New user and password...");
+    System.out.println("Enter your new user name");
     String username = System.console().readLine();
 
     if (username == null || username.length() == 0)
@@ -85,9 +87,10 @@ public class PasswordManager
   public static void CheckPassword()
   {
     //input user name and password
-    System.out.println("Enter your user name");
+    System.out.println("Check Password...");
+    System.out.println("Enter your existing user name");
     String username = System.console().readLine();
-    System.out.println("Enter your password:");
+    System.out.println("Enter your existing password:");
     String password = System.console().readLine();
 
     //Calculate hash
@@ -115,11 +118,11 @@ public class PasswordManager
 
     if (hash == null || savedHash == null || java.util.Arrays.equals(savedHash, hash))
     {
-        System.out.println("Correct password");
+        System.out.println("Correct password!");
     }
     else
     {
-        System.out.println("Incorrect password");
+        System.out.println("Incorrect password!");
     }
   }
 
